@@ -7,13 +7,13 @@ This repository contains the code for a comprehensive vehicle rental booking sys
 # Table of Contents
 
 1. [Features](#features)
-   1. [User-Friendly Interface](#user-friendly-interface)
-   2. [Client-Server Architecture](#client-server-architecture)
-   3. [Database Design](#database-design)
-   4. [Services](#services)
-   5. [Views](#views)
-   6. [Project Goals](#project-goals)
-   7. [Mockup Design](#mockup-design)
+   1. [User-Friendly Interface](#1-user-friendly-interface)
+   2. [Client-Server Architecture](#2-client-server-architecture)
+   3. [Database Design](#3-database-design)
+   4. [Services](#4-services)
+   5. [Views](#5-views)
+   6. [Project Goals](#6-project-goals)
+   7. [Mockup Design](#7-mockup-design)
 2. [Conclusion](#conclusion)
 
 
