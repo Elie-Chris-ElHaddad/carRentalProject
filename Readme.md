@@ -4,6 +4,19 @@
 
 This repository contains the code for a comprehensive vehicle rental booking system, designed to streamline the process of renting automobiles. The system is built as a client-server application using Node.js, providing a user-friendly platform for users to search, book, and manage car rentals efficiently.
 
+# Table of Contents
+
+1. [Features](#features)
+   1. [User-Friendly Interface](#user-friendly-interface)
+   2. [Client-Server Architecture](#client-server-architecture)
+   3. [Database Design](#database-design)
+   4. [Services](#services)
+   5. [Views](#views)
+   6. [Project Goals](#project-goals)
+   7. [Mockup Design](#mockup-design)
+2. [Conclusion](#conclusion)
+
+
 ## Features
 
 ### 1. User-Friendly Interface
