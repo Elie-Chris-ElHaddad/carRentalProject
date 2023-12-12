@@ -29,10 +29,6 @@ const insertRentalAgreementValidation = [
  * @name updateRentalAgreementValidation
  */
 const updateRentalAgreementValidation = [
-  //check('User_ID').isEmpty().withMessage("Please enter the user ID"),
-  // check('User_ID').isNumeric().withMessage("Please enter a valid user ID"),
-  //check('Car_ID').isEmpty().withMessage("Please enter the car ID"),
-  // check('Car_ID').isNumeric().withMessage("Please enter a valid car ID"),
   check("Pick_up_date").isEmpty().withMessage("Please enter a pick up date"),
   check("Pick_up_Date").isDate().withMessage("Please enter a valid date"),
   check("Return_date").isEmpty().withMessage("Please enter a return date"),

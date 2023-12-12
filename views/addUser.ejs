@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User - Car Rental System</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Car Rental System</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/cars">Cars</a></li>
+                <li><a href="/rentalAgreements">Rental Agreements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Add a New User</h2>
+            <form action="/api/user/addUser" method="post">
+                <label for="Name">Name:</label>
+                <input type="text" id="Name" name="Name" required>
+
+                <label for="Last_Name">Last Name:</label>
+                <input type="text" id="Last_Name" name="Last_Name" required>
+
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" required>
+
+                <label for="Phone">Phone:</label>
+                <input type="text" id="Phone" name="Phone" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Add User</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Car Rental System</p>
+    </footer>
+</body>
+</html>

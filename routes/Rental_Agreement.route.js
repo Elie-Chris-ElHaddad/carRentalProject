@@ -19,7 +19,6 @@ const router = express.Router();
  * @name get/rentalAgreementById
  * @function
  * @memberof module:Routes/RentalAgreement~rentalAgreementRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -30,7 +29,6 @@ router.get('/getRentalAgreementById',Rental_AgreementController.getRentalAgreeme
  * @name get/allRentalAgreements
  * @function
  * @memberof module:Routes/RentalAgreement~rentalAgreementRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -41,7 +39,6 @@ router.get('/getAllRentalAgreements', Rental_AgreementController.getAllRentalAgr
  * @name post/addRentalAgreement
  * @function
  * @memberof module:Routes/RentalAgreement~rentalAgreementRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -52,7 +49,6 @@ router.post('/addRentalAgreement', insertRentalAgreementValidation, Rental_Agree
  * @name patch/updateRentalAgreement
  * @function
  * @memberof module:Routes/RentalAgreement~rentalAgreementRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -63,7 +59,6 @@ router.patch('/updateRentalAgreement', updateRentalAgreementValidation, Rental_A
  * @name delete/deleteRentalAgreement
  * @function
  * @memberof module:Routes/RentalAgreement~rentalAgreementRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */

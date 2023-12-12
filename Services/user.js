@@ -1,8 +1,5 @@
 const User  = require('../models/user');
 
-// This module contains functions that helps us interact with the User model in the database.
-
-
 /**
  * Adds a new user to the database.
  *
@@ -29,7 +26,7 @@ const addUser = async(Name,Last_Name, Email, Phone, password)=> {
      throw new Error('Error adding a user');
    }
  }
-
+ 
 /**
  * Retrieves a user by their ID from the database.
  *
@@ -107,7 +104,10 @@ const editUser = async(User_ID, newName, newLast_Name, newEmail, newPhone, newPa
 const deleteUser = async(User_ID)=> {
   try {
     const user = await getUserById(User_ID);
-    await user.destroy();
+    if(user){
+      await user.destroy();
+      return user.toJSON();
+    }
   } catch (error) {
     throw new Error('Error deleting user');
   }

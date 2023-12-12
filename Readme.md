@@ -1,33 +1,23 @@
-# Car Rental System
+# Car Rental System developped by Elie-chris El Haddad 
 
 ## Overview
 
-This repository contains the code for a comprehensive vehicle rental booking system, designed to streamline the process of renting automobiles. The system is built as a client-server application using Node.js, providing a user-friendly platform for users to search, book, and manage car rentals efficiently.
-
+This repository contains the code for a comprehensive vehicle rental booking system, designed to  process the renting of automobiles. The system is built as a client-server application using Node.js, providing a user-friendly platform for users to search, book, and manage car rentals efficiently.
+During the first phase of this project the main focus was getting the backEnd API functional with the core calls ready. 
+                     
 # Table of Contents
 
-1. [Features](#features)
-   1. [User-Friendly Interface](#1-user-friendly-interface)
-   2. [Client-Server Architecture](#2-client-server-architecture)
-   3. [Database Design](#3-database-design)
-   4. [Services](#4-services)
-   5. [Views](#5-views)
-   6. [Project Goals](#6-project-goals)
-   7. [Mockup Design](#7-mockup-design)
-2. [Conclusion](#conclusion)
-
+1. [Client-Server Architecture](#1-client-server-architecture)
+2. [Database Design](#2-database-design)
+3. [API Calls](#3-API-Calls)
 
 ## Features
 
-### 1. User-Friendly Interface
+### 1. Client-Server Architecture
 
-The application offers a seamless user experience, allowing users to easily browse a diverse selection of cars, select preferred features, and make reservations online.
+Using Node.js, the system incorporates both client-side and server-side components to ensure a smooth and responsive user experience.
 
-### 2. Client-Server Architecture
-
-Utilizing Node.js, the system incorporates both client-side and server-side components to ensure a smooth and responsive user experience.
-
-### 3. Database Design
+### 2. Database Design
 
 The system employs a relational database with the following tables:
 
@@ -35,41 +25,72 @@ The system employs a relational database with the following tables:
 - **Car**: Contains details about rental vehicles.
 - **Rental Agreement**: Manages legally binding contracts for car rentals.
 
-The Entity-Relationship Diagram (ERD) provides a visual representation of the database structure.
+### 3. API Calls 
 
-### 4. Services
+For the API created we have an endpoint for each entity in the project in order to keep developpement clear and scalable.
 
-The application includes a set of services to manage data in the database, such as:
+I. User entity (/api/user):
+      getUserById (/getUserById) : 
+      Method: GET
+      Params: User_ID : int 
 
-- `getAvailableVehicles(Pick_up_Date, Return_Date)`: Retrieves a list of available vehicles for a specified date range.
-- `makeReservation(User_Id, Car_Id, Pick_up_Date, Return_Date)`: Allows users to make reservations.
-- `updateReservation(Agreement_ID)`: Modifies reservation details.
-- `cancelReservation(Agreement_ID)`: Cancels a reservation.
+      getAllUsers (/allUsers):
+      Method: GET
+      No params needed 
 
-### 5. Views
+      addUser (/addUser):
+      Method: POST
+      Params:  Name : string , Last_Name : string , Phone : string , Email : string(type email) , Password : string (type Password)
+      PS: Conventional models are to be followed for the Phone , Email and Password everytime they are used as params 
 
-The system offers various views for user interaction, including:
+      updateUser (/updateUser):
+      Method: PATCH
+      Params: User_ID : int , Name : string , Last_Name : string , Phone : string , Email : string(type email)
 
-- **Homepage**: Showcases exclusive offers and cars.
-- **Vehicle Details**: Provides comprehensive details about a particular rental car.
-- **Reservation Form**: Allows users to customize their reservations.
-- **Reservation Management**: Enables users to view and edit existing reservations.
+      deleteUser (/deleteUser):
+      Method: DELETE
+      Params: User_ID : int 
 
-### 6. Project Goals
+II. Car entity (/api/car):
+      getCarById (/getcarById) : 
+      Method: GET
+      Params: car_ID : int 
 
-Our main objectives for this semester include:
+      getAllCars (/allcars):
+      Method: GET
+      No params needed 
 
-- Creating a complete Node.js server using Express.js.
-- Implementing permission and authentication features for users.
-- Developing RESTful API endpoints for customer and car bookings.
-- Utilizing EJS or React templates for dynamic client-side views.
-- Ensuring an intuitive and responsive UI.
-- Establishing a secure and effective procedure for booking rental automobiles.
+      addCar (/addcar):
+      Method: POST
+      Params:  Make: string , Model: string , Year : string , Price_per_day : float 
 
-### 7. Mockup Design
+      updateCar (/updatecar):
+      Method: PATCH
+      Params: Car_ID : int ,Make: string , Modele: string , year : string , Price_per_day : float 
 
-We will use Figma to create visually appealing and user-friendly mockups that guide the application's design and user interface. The development process will be aligned with these mockups to enhance the user experience.
+      deleteCar (/deleteCar):
+      Method: DELETE
+      Params: Car_ID : int 
+      
+III. RentalAgreement entity (/api/RentalAgreement):
+      getRentalAgreementById (/getRentalAgreementById) : 
+      Method: GET
+      Params: Agreement_id : int 
 
-## Conclusion
+      getAllRentalAgreements (/allRentalAgreements):
+      Method: GET
+      No params needed 
 
-The proposed vehicle rental booking system aims to streamline the rental process, providing clients with a comfortable and delightful experience. Our goal is to establish a successful presence in the automobile rental sector by offering a diverse range of rental cars through an easy-to-use, secure platform. We are excited to embark on this project and believe it aligns well with the goals of the CSIS228 course.
+      addRentalAgreement (/addRentalAgreement):
+      Method: POST
+      Params:  User_ID : int , Car_ID : int , Pick_up_date : Date , Return_Date : Date 
+
+      updateRentalAgreement (/updateRentalAgreement):
+      Method: PATCH
+      Params:  Agreement_id : int , Pick_up_date : Date , Return_Date : Date 
+
+      deleteRentalAgreement (/deleteRentalAgreement):
+      Method: DELETE
+      Params: Agreement_id : int 
+
+## I hope you enjoy this project and thank you for your time and support. 

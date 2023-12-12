@@ -19,7 +19,6 @@ const router = express.Router();
  * @name get/allCars
  * @function
  * @memberof module:Routes/Car~carRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -30,7 +29,6 @@ router.get('/getAllCars',carController.getAllCarsController);
  * @name get/carById
  * @function
  * @memberof module:Routes/Car~carRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -41,7 +39,6 @@ router.get('/getCarById',carController.getCarByIdController);
  * @name post/addCar
  * @function
  * @memberof module:Routes/Car~carRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -52,7 +49,6 @@ router.post('/addCar',insertCarValidation, carController.addCarController);
  * @name patch/updateCar
  * @function
  * @memberof module:Routes/Car~carRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
@@ -63,7 +59,6 @@ router.patch('/updateCar', updateCarValidation, carController.updateCarControlle
  * @name delete/deleteCar
  * @function
  * @memberof module:Routes/Car~carRouter
- * @inner
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */

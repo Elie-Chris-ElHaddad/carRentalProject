@@ -12,20 +12,11 @@ const { check } = require("express-validator");
  * @name insertCarValidation
  */
 const insertCarValidation = [
-  // check('Year').isNumeric().withMessage("Please enter a valid year"),
   check("Year").custom((value) => {
     if (Year.length !== 4) {
       throw new Error("Year must be a 4-digit number");
     }
   }),
-  // check('user_birth_year')
-  // .custom((value) => {
-  //   if (!/^\d{4}$/.test(value)) {
-  //     throw new Error('Year must be exactly four digits');
-  //   }
-  //   return true;
-  // })
-  // .withMessage('Year must be exactly four digits'),
   check("Model").notEmpty().withMessage("The model parameter must be filled"),
   check("Make").notEmpty().withMessage("The make parameter must be filled"),
   check("Availabilty").notEmpty().withMessage("The availibility parameter must be filled"),
@@ -41,11 +32,9 @@ const insertCarValidation = [
  */
 const updateCarValidation = [
   check("Year").notEmpty().withMessage("The year must be filled"),
-  // check('Year').isNumeric().withMessage("Please enter a valid year"),
   check("Year").isLength({ min: 4, max: 4 }).withMessage("Year must be a 4-digit number"),
   check("Model").notEmpty().withMessage("The model parameter must be filled"),
   check("Make").notEmpty().withMessage("The make parameter must be filled"),
-  //check('Availabilty').notEmpty().withMessage("The availibility parameter must be filled"),
   check("Availability").isBoolean().withMessage("The availability parameter must be either true or false"),
   check("Price_per_day").notEmpty().withMessage("The price per day parameter must be filled"),
 ];

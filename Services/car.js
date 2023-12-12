@@ -1,10 +1,6 @@
 const Car = require('../models/Car');
 const sequelize = require('sequelize');
 
-
-// This module contains functions that helps us interact with the car model in the database.
-
-
 /**
  * Adds a new car to the database.
  *
@@ -19,9 +15,6 @@ const sequelize = require('sequelize');
  */
 const addCar = async (Year, Model, Make, Availability, Price_per_day) => {
   try {
-    // if (Year.length !== 4){
-    //   throw new Error('Year is supposed to be exactly 4 digits')
-    // }
     const car = await Car.create({
       Year: Year,
       Model: Model,
@@ -55,11 +48,6 @@ const getCars=async()=>{
     throw new Error('Error retrieving car');
   }
 }
-
-// const getCarByName = async (Make) =>{
-//   const car = await Car.findOne({Where: { Make:Make}})
-//   return car
-// }
 
 /**
  * Retrieves a car by its ID from the database.
@@ -128,6 +116,7 @@ const deleteCar = async (Car_ID) => {
     console.error(error);
   }
 }
+
 
 module.exports ={
   addCar,

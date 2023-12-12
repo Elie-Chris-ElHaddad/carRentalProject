@@ -10,7 +10,7 @@ const sequelize = require("sequelize");
 const app = express();
 app.use(express.json());
 app.get("/", (req, res) => res.send("INDEX")); // this is the route makes a request to the server and returns a response.
-
+app.set('view engine', 'ejs');
 const PORT = process.env.PORT;
 //console.log(config);
 

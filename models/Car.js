@@ -1,7 +1,3 @@
-/**
- * Sequelize Model for the Car entity.
- * @module Models/Car
- */
 const { DataTypes } = require("sequelize");
 const sequelize = require("../Database/configSqlz");
 

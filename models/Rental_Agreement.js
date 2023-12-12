@@ -1,7 +1,3 @@
-/**
- * Sequelize Model for the RentalAgreement entity.
- * @module Models/RentalAgreement
- */
 const { DataTypes } = require("sequelize");
 const sequelize = require("../Database/configSqlz");
 const User = require("../models/user");

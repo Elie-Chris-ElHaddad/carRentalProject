@@ -1,10 +1,6 @@
 const {getCarById}  =  require('../Services/car');
 const {getUserById} = require('../Services/user');
-
 const RentalAgreement = require('../models/Rental_Agreement');
-
-// This module contains functions that helps us interact with the Rental_Agreement model in the database.
-
 
 /**
  * Adds a new rental agreement to the database.
@@ -111,7 +107,10 @@ const  updateRentalAgreement=async (Agreement_id, newPick_up_Date, newReturn_Dat
 const deleteRentalAgreement =async (Agreement_id)=>{
   try {
     const rentalAgreement = await getRentalAgreementById(Agreement_id);
-    await rentalAgreement.destroy();
+    if (rentalAgreement){
+      await rentalAgreement.destroy();
+      return rentalAgreement.toJSON();
+  }
   } catch (error) {
     throw new Error('Error deleting rental agreement');
   }

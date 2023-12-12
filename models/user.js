@@ -1,7 +1,3 @@
-/**
- * Sequelize Model for the User entity.
- * @module Models/User
- */
 const { DataTypes } = require("sequelize");
 const sequelize = require("../Database/configSqlz");
 
