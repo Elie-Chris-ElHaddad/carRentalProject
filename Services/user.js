@@ -113,10 +113,24 @@ const deleteUser = async(User_ID)=> {
   }
 }
 
+const checkLogin = async  (email , password) =>{
+  try{
+      const user = await User.findOne({ where: { email: email }});
+      if(user &&  password === user.password){
+        console.log(user);
+        return user;
+      }
+  }catch(e){
+      console.log(e);
+  }
+  return null;
+}
+
 module.exports = {
   addUser,
   getUserById,
   getAllUsers,
   editUser,
   deleteUser,
+  checkLogin
 }

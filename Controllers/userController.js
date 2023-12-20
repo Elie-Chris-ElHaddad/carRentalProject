@@ -5,6 +5,7 @@ const {
   getUserById,
   editUser,
   deleteUser,
+  checkLogin
 } = require("../Services/user");
 
 /**
@@ -64,10 +65,12 @@ const addUserController = async (req, res) => {
   try {
     // Extract user details from the request body
     const { Name, Last_Name, Email, Phone, password } = req.body;
+    console.log(req.body);
     // Add the new user to the database using the service
     const response = await addUser(Name, Last_Name, Email, Phone, password);
     // Send a JSON response with the newly added use
-    res.status(200).json({ response });
+    // res.status(200).json({ response });
+    res.redirect(`/home`);
   } catch (error) {
     // Send a 500 Internal Server Error response with the error message
     res.status(500).json({ error });
@@ -134,6 +137,21 @@ const deleteUserController = async (req, res) => {
   }
 };
 
+const getUserLoginController = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await checkLogin(email, password);
+    // res.status(200).json({ user });
+    if(user){
+      res.redirect(`/home`);
+    }else{
+      res.redirect(`/login`);
+    }
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
+
 // Export the controller functions for use in routes
 module.exports = {
   getUserByIdController,
@@ -141,4 +159,5 @@ module.exports = {
   addUserController,
   updateUserController,
   deleteUserController,
+  getUserLoginController
 };

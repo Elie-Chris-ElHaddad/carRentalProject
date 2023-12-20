@@ -38,6 +38,8 @@ router.get('/getAllUsers', userController.getAllUsersController);
  */
 router.post('/addUser', insertUserValidation,  userController.addUserController);
 
+router.post('/getUserLogin' , userController.getUserLoginController);
+
 /**
  * Route to update an existing user.
  * @name patch/updateUser
